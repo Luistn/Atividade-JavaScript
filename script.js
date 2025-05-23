@@ -12,7 +12,7 @@ function calculadoraAvancada() {
         resultado = num1 * num2;
     } else if (operacao === "/") {
         if (num2 === 0) {
-            document.writeln("Erro: Divisão por zero!");
+            document.write("Erro: Divisão por zero!");
             return;
         }
         resultado = num1 / num2;
@@ -21,10 +21,10 @@ function calculadoraAvancada() {
     } else if (operacao === "**") {
         resultado = num1 ** num2;
     } else {
-        document.writeln("Operação inválida!");
+        document.write("Operação inválida!");
         return;
     }
-    document.writeln(`Resultado: ${num1} ${operacao} ${num2} = ${resultado}`);
+    document.write(`Resultado: ${num1} ${operacao} ${num2} = ${resultado}`);
 }
 
 
@@ -56,7 +56,7 @@ function tabuadaPersonalizada() {
     for (let i = 1; i <= limite; i++) {
         resultado += `${base} x ${i} = ${base * i}<br>`;
     }
-    document.writeln(resultado);
+    document.write(resultado);
 }
 
 
@@ -71,7 +71,7 @@ function somaParesWhile() {
         soma += i;
         i += 2;
     }
-    document.writeln(`A soma dos pares até ${limite} é ${soma}`);
+    document.write(`A soma dos pares até ${limite} é ${soma}`);
 }
 
 
@@ -104,7 +104,51 @@ function calcularFatorial() {
     for (let i = 2; i <= num; i++) {
         fatorial *= i;
     }
-    document.writeln(`Fatorial de ${num} é ${fatorial}`);
+    document.write(`Fatorial de ${num} é ${fatorial}`);
+}
+
+function verificarPrimo() {
+  let n = prompt("Digite um número:");
+  let p = n > 1;
+  for (let i = 2; i < n && p; i++)
+    if (n % i == 0) p = false;
+  document.write(n + (p ? " é primo." : " não é primo."));
+}
+
+
+
+
+function mediaAritmetica() {
+  let soma = 0, count = 0, n;
+
+  while ((n = prompt("Digite um número ou 'fim':")) !== "fim") {
+    let num = parseFloat(n);
+    if (!isNaN(num)) {
+      soma += num;
+      count++;
+    }
+  }
+
+  if (count > 0) {
+    document.write("Média: " + (soma / count).toFixed(2));
+  } else {
+    document.write("Nenhum número válido foi digitado.");
+  }
+}
+
+
+function contadorRegressivo() {
+    let num = parseInt(prompt("Digite um número maior que zero:"));
+    if (isNaN(num) || num <= 0) {
+        alert("Número inválido!");
+        return;
+    }
+    let resultado = "";
+    while (num >= 0) {
+        resultado += num + "<br>";
+        num--;
+    }
+    document.write(resultado);
 }
 
 
@@ -133,30 +177,6 @@ function calcularFatorial() {
 
 
 
-
-
-
-
-
-// function verificarPrimo() {
-//     const num = parseInt(prompt("Digite um número inteiro:"));
-//     if (num < 2) {
-//         document.write(`${num} não é primo.`);
-//         return;
-//     }
-//     let primo = true;
-//     for (let i = 2; i <= Math.sqrt(num); i++) {
-//         if (num % i === 0) {
-//             primo = false;
-//             break;
-//         }
-//     }
-//     if (primo) {
-//         document.write(`${num} é primo.`);
-//     } else {
-//         document.write(`${num} não é primo.`);
-//     }
-// }
 
 // function mediaAritmetica() {
 //     let soma = 0;
