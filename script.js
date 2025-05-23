@@ -94,6 +94,8 @@ function validaSenha() {
 
 
 
+
+
 function calcularFatorial() {
     const num = parseInt(prompt("Digite um número inteiro positivo:"));
     if (isNaN(num) || num < 0) {
@@ -106,6 +108,10 @@ function calcularFatorial() {
     }
     document.write(`Fatorial de ${num} é ${fatorial}`);
 }
+
+
+
+
 
 function verificarPrimo() {
   let n = prompt("Digite um número:");
@@ -137,6 +143,9 @@ function mediaAritmetica() {
 }
 
 
+
+
+
 function contadorRegressivo() {
     let num = parseInt(prompt("Digite um número maior que zero:"));
     if (isNaN(num) || num <= 0) {
@@ -151,78 +160,19 @@ function contadorRegressivo() {
     document.write(resultado);
 }
 
+function verificarNumeros() {
+  let inicio = parseInt(prompt("Digite o número inicial:"));
+  let fim = parseInt(prompt("Digite o número final:"));
+  let encontrou = false;
 
+  for (let i = inicio; i <= fim; i++) {
+    if (i % 2 === 0 && i % 3 === 0) {
+      document.write(i + "<br>");
+      encontrou = true;
+    }
+  }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function mediaAritmetica() {
-//     let soma = 0;
-//     let count = 0;
-//     while (true) {
-//         let entrada = prompt("Digite um número ou 'fim' para encerrar:");
-//         if (entrada.toLowerCase() === "fim") break;
-//         let num = parseFloat(entrada);
-//         if (!isNaN(num)) {
-//             soma += num;
-//             count++;
-//         }
-//     }
-//     if (count === 0) {
-//         document.write("Nenhum número foi inserido.");
-//     } else {
-//         document.write(`Média aritmética: ${(soma / count).toFixed(2)}`);
-//     }
-// }
-
-// function contadorRegressivo() {
-//     let num = parseInt(prompt("Digite um número maior que zero:"));
-//     if (isNaN(num) || num <= 0) {
-//         alert("Número inválido!");
-//         return;
-//     }
-//     let resultado = "";
-//     while (num >= 0) {
-//         resultado += num + "<br>";
-//         num--;
-//     }
-//     document.write(resultado);
-// }
-
-// function multiplosParesE3() {
-//     const inicio = parseInt(prompt("Digite o número inicial:"));
-//     const fim = parseInt(prompt("Digite o número final:"));
-//     let encontrados = [];
-//     for (let i = inicio; i <= fim; i++) {
-//         if (i % 2 === 0 && i % 3 === 0) {
-//             encontrados.push(i);
-//         }
-//     }
-//     if (encontrados.length === 0) {
-//         document.write("Nenhum número satisfaz a condição.");
-//     } else {
-//         document.write("Números pares e múltiplos de 3: " + encontrados.join(", "));
-//     }
-// }
+  if (!encontrou) {
+    document.write("Nenhum número encontrado que seja par e múltiplo de 3.");
+  }
+}
